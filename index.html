@@ -19,60 +19,74 @@
         <section id="dashboard" class="dashboard-section">
             <h1>Welcome to Your Personalized Stock Tracker</h1>
             <div class="dashboard-grid">
-                <a href="portfolio.html" class="card portfolio-summary">
-                    <h2>Portfolio Summary</h2>
-                    <div class="card portfolio-stats">
-                        <h2>Portfolio Value</h2>
-                        <div class="value">₹42,93,837</div>
-                        <div class="change positive">+2.5% Today</div>
-                    </div>
-                </a>
-
-                <a href="events.html" class="card upcoming-events">
-                    <h2>Upcoming Events for Your Portfolio</h2>
-                    <div class="events-list">
-                        <div class="event-item">
-                            <div class="event-date">Tomorrow</div>
-                            <div class="event-details">
-                                <h3>RELIANCE Earnings Report</h3>
-                                <p>Q4 2023 Results</p>
-                            </div>
-                        </div>
-                        <div class="event-item">
-                            <div class="event-date">Dec 15</div>
-                            <div class="event-details">
-                                <h3>TCS Dividend Payment</h3>
-                                <p>₹32 per share</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="sentiment.html" class="card sentiment-analysis">
-                    <h2>Market Sentiment Around Your Portfolio</h2>
-                    <div class="sentiment-chart">
-                        <canvas id="sentimentChart"></canvas>
-                    </div>
+                <a href="portfolio.html" class="card">
+                    <h2><i class="fas fa-chart-line"></i> Portfolio Overview</h2>
+                    <div class="value">₹42,93,837</div>
+                    <div class="change positive">+2.5% Today</div>
+                    <div class="subtext"><i class="fas fa-coins"></i> 12 Stocks in Portfolio</div>
                 </a>
 
                 <a href="trending.html" class="card">
-                    <h2>Trending Stocks You Might Like</h2>
-                    <div class="trending-list">
-                        <div class="trending-item">
-                            <span class="symbol">HDFCBANK</span>
-                            <span class="price">₹1,584.45</span>
-                            <span class="change positive">+5.2%</span>
+                    <h2><i class="fas fa-fire"></i> Trending Stocks You Might Like</h2>
+                    <div class="stock-item">
+                        <span>RELIANCE</span>
+                        <span class="change positive">+1.2%</span>
+                    </div>
+                    <div class="stock-item">
+                        <span>TCS</span>
+                        <span class="change positive">+0.8%</span>
+                    </div>
+                    <div class="stock-item">
+                        <span>HDFCBANK</span>
+                        <span class="change positive">+0.3%</span>
+                    </div>
+                </a>
+
+                <a href="events.html" class="card">
+                    <h2><i class="fas fa-calendar-alt"></i> Market Events Related to Your Portfolio</h2>
+                    <div class="events-list">
+                        <div class="event-item">
+                            <div class="event-date">Today</div>
+                            <div class="event-details">
+                                <h3>Reliance Industries AGM</h3>
+                                <p>Annual General Meeting scheduled for 2:00 PM</p>
+                            </div>
                         </div>
-                        <div class="trending-item">
-                            <span class="symbol">INFY</span>
-                            <span class="price">₹1,485.09</span>
-                            <span class="change positive">+3.8%</span>
+                        <div class="event-item">
+                            <div class="event-date">Tomorrow</div>
+                            <div class="event-details">
+                                <h3>TCS Earnings Report</h3>
+                                <p>Q2 2024 earnings announcement expected</p>
+                            </div>
                         </div>
+                        <div class="event-item">
+                            <div class="event-date">Next Week</div>
+                            <div class="event-details">
+                                <h3>HDFC Bank Dividend</h3>
+                                <p>Dividend payment scheduled for shareholders</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="sentiment.html" class="card">
+                    <h2><i class="fas fa-comments"></i> Market Sentiment</h2>
+                    <div class="sentiment-item">
+                        <i class="fas fa-smile"></i>
+                        <span>Positive Market Outlook</span>
+                    </div>
+                    <div class="sentiment-item">
+                        <i class="fas fa-chart-pie"></i>
+                        <span>Strong Tech Sector</span>
+                    </div>
+                    <div class="sentiment-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Emerging Opportunities</span>
                     </div>
                 </a>
 
                 <a href="wishlist.html" class="card">
-                    <h2>Stock Wishlist</h2>
+                    <h2><i class="fas fa-star"></i> Stock Wishlist</h2>
                     <div class="wishlist-preview">
                         <div class="wishlist-stat">
                             <span class="label">Stocks in Wishlist</span>
