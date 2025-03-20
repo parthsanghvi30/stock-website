@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Sentiment - StockTracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">StockTracker</div>
+        <div class="nav-links">
+            <a href="index.html">Dashboard</a>
+            <a href="events.html">Events</a>
+            <a href="sentiment.html" class="active">Sentiment</a>
+            <a href="portfolio.html">Portfolio</a>
+        </div>
+        <div class="user-profile">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </nav>
+
+    <main>
+        <div class="back-button">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Dashboard
+            </a>
+        </div>
+
+        <section class="sentiment-section">
+            <h1>Market Sentiment Around Your Portfolio</h1>
+            
+            <div class="sentiment-overview">
+                <div class="card">
+                    <h2>Overall Sentiment</h2>
+                    <div class="sentiment-chart">
+                        <canvas id="portfolioSentimentChart"></canvas>
+                    </div>
+                    <div class="sentiment-stats">
+                        <div class="stat">
+                            <span class="label">Current Sentiment</span>
+                            <span class="value positive">Positive</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Change from Yesterday</span>
+                            <span class="value positive">+5%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Stock-wise Sentiment</h2>
+                    <div class="stock-sentiment-list">
+                        <div class="stock-sentiment-item">
+                            <div class="stock-info">
+                                <span class="stock">RELIANCE</span>
+                                <span class="sentiment positive">Positive</span>
+                            </div>
+                            <div class="sentiment-bar">
+                                <div class="bar positive" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="stock-sentiment-item">
+                            <div class="stock-info">
+                                <span class="stock">TCS</span>
+                                <span class="sentiment positive">Positive</span>
+                            </div>
+                            <div class="sentiment-bar">
+                                <div class="bar positive" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="stock-sentiment-item">
+                            <div class="stock-info">
+                                <span class="stock">HDFCBANK</span>
+                                <span class="sentiment neutral">Neutral</span>
+                            </div>
+                            <div class="sentiment-bar">
+                                <div class="bar neutral" style="width: 50%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sentiment-news">
+                <h2>Latest News & Social Media</h2>
+                <div class="news-grid">
+                    <div class="card news-card">
+                        <div class="news-header">
+                            <span class="news-source">Economic Times</span>
+                            <span class="news-time">2 hours ago</span>
+                        </div>
+                        <h3>RBI's Monetary Policy Impact on Banking Sector</h3>
+                        <p>The Reserve Bank of India's latest policy decisions are expected to positively impact the banking sector, particularly major players like HDFC Bank and ICICI Bank.</p>
+                        <div class="news-meta">
+                            <span class="news-sentiment positive">Positive Impact</span>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="card news-card">
+                        <div class="news-header">
+                            <span class="news-source">Business Standard</span>
+                            <span class="news-time">4 hours ago</span>
+                        </div>
+                        <h3>IT Sector Shows Strong Growth in Q3</h3>
+                        <p>Major IT companies including TCS and Infosys report better-than-expected earnings, signaling strong market sentiment in the technology sector.</p>
+                        <div class="news-meta">
+                            <span class="news-sentiment positive">Positive Impact</span>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="card social-card">
+                        <div class="social-header">
+                            <img src="https://via.placeholder.com/40" alt="Profile" class="social-profile">
+                            <div class="social-info">
+                                <span class="social-name">Rakesh Jhunjhunwala</span>
+                                <span class="social-handle">@RakeshJhunjhunwala</span>
+                            </div>
+                            <span class="social-time">1 hour ago</span>
+                        </div>
+                        <p class="social-content">"The Indian banking sector is showing remarkable resilience. HDFC Bank's latest quarterly results are particularly impressive. Strong fundamentals and digital transformation are key drivers."</p>
+                        <div class="social-stats">
+                            <span><i class="far fa-heart"></i> 2.4K</span>
+                            <span><i class="far fa-comment"></i> 156</span>
+                            <span><i class="far fa-share-square"></i> 89</span>
+                        </div>
+                    </div>
+
+                    <div class="card social-card">
+                        <div class="social-header">
+                            <img src="https://via.placeholder.com/40" alt="Profile" class="social-profile">
+                            <div class="social-info">
+                                <span class="social-name">Radhakishan Damani</span>
+                                <span class="social-handle">@RadhakishanDamani</span>
+                            </div>
+                            <span class="social-time">3 hours ago</span>
+                        </div>
+                        <p class="social-content">"Reliance's retail and digital businesses continue to show strong growth. The company's diversification strategy is paying off well. Bullish on the long-term prospects."</p>
+                        <div class="social-stats">
+                            <span><i class="far fa-heart"></i> 1.8K</span>
+                            <span><i class="far fa-comment"></i> 124</span>
+                            <span><i class="far fa-share-square"></i> 67</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

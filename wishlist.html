@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist - StockTracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">StockTracker</div>
+        <div class="user-profile">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </nav>
+
+    <main>
+        <div class="back-button">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Dashboard
+            </a>
+        </div>
+
+        <section class="wishlist-section">
+            <h1>Stock Wishlist</h1>
+            
+            <div class="wishlist-actions">
+                <div class="card">
+                    <form class="add-stock-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="stockSymbol" placeholder="Enter stock symbol (e.g., RELIANCE)">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" id="targetPrice" placeholder="Target price">
+                            </div>
+                            <button type="submit" class="add-btn">
+                                <i class="fas fa-plus"></i> Add to Wishlist
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="wishlist-grid">
+                <div class="card wishlist-card">
+                    <div class="wishlist-header">
+                        <div class="stock-info">
+                            <span class="symbol">TATASTEEL</span>
+                            <span class="name">Tata Steel Ltd.</span>
+                        </div>
+                        <button class="remove-btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="price-info">
+                        <div class="current-price">
+                            <span class="label">Current Price</span>
+                            <span class="value">₹125.50</span>
+                        </div>
+                        <div class="target-price">
+                            <span class="label">Target Price</span>
+                            <span class="value">₹120.00</span>
+                        </div>
+                        <div class="price-diff negative">
+                            <i class="fas fa-arrow-down"></i>
+                            <span>₹5.50 to target</span>
+                        </div>
+                    </div>
+                    <div class="stock-chart">
+                        <canvas id="chart1"></canvas>
+                    </div>
+                    <div class="alert-settings">
+                        <label class="alert-toggle">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                            Price Alert
+                        </label>
+                    </div>
+                </div>
+
+                <div class="card wishlist-card">
+                    <div class="wishlist-header">
+                        <div class="stock-info">
+                            <span class="symbol">SUNPHARMA</span>
+                            <span class="name">Sun Pharmaceutical Industries Ltd.</span>
+                        </div>
+                        <button class="remove-btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="price-info">
+                        <div class="current-price">
+                            <span class="label">Current Price</span>
+                            <span class="value">₹1,120.75</span>
+                        </div>
+                        <div class="target-price">
+                            <span class="label">Target Price</span>
+                            <span class="value">₹1,150.00</span>
+                        </div>
+                        <div class="price-diff positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>₹29.25 to target</span>
+                        </div>
+                    </div>
+                    <div class="stock-chart">
+                        <canvas id="chart2"></canvas>
+                    </div>
+                    <div class="alert-settings">
+                        <label class="alert-toggle">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                            Price Alert
+                        </label>
+                    </div>
+                </div>
+
+                <div class="card wishlist-card">
+                    <div class="wishlist-header">
+                        <div class="stock-info">
+                            <span class="symbol">COALINDIA</span>
+                            <span class="name">Coal India Ltd.</span>
+                        </div>
+                        <button class="remove-btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="price-info">
+                        <div class="current-price">
+                            <span class="label">Current Price</span>
+                            <span class="value">₹245.30</span>
+                        </div>
+                        <div class="target-price">
+                            <span class="label">Target Price</span>
+                            <span class="value">₹240.00</span>
+                        </div>
+                        <div class="price-diff negative">
+                            <i class="fas fa-arrow-down"></i>
+                            <span>₹5.30 to target</span>
+                        </div>
+                    </div>
+                    <div class="stock-chart">
+                        <canvas id="chart3"></canvas>
+                    </div>
+                    <div class="alert-settings">
+                        <label class="alert-toggle">
+                            <input type="checkbox">
+                            <span class="toggle-slider"></span>
+                            Price Alert
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

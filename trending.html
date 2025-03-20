@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending Stocks You Might Like - StockTracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">StockTracker</div>
+        <div class="user-profile">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </nav>
+
+    <main>
+        <div class="back-button">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Dashboard
+            </a>
+        </div>
+
+        <section class="trending-section">
+            <h1>Trending Stocks You Might Like</h1>
+            
+            <div class="trending-filters">
+                <div class="card">
+                    <div class="filter-options">
+                        <button class="filter-btn active">All Stocks</button>
+                        <button class="filter-btn">NSE 50</button>
+                        <button class="filter-btn">Banking</button>
+                        <button class="filter-btn">IT</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trending-grid">
+                <div class="card trending-card">
+                    <div class="trending-header">
+                        <div class="stock-info">
+                            <span class="symbol">HDFCBANK</span>
+                            <span class="name">HDFC Bank Ltd.</span>
+                        </div>
+                        <span class="change positive">+5.2%</span>
+                    </div>
+                    <div class="trending-details">
+                        <div class="price">₹1,584.45</div>
+                        <div class="volume">Volume: 2.5M</div>
+                    </div>
+                    <div class="trending-chart">
+                        <canvas id="trendingChart1"></canvas>
+                    </div>
+                </div>
+
+                <div class="card trending-card">
+                    <div class="trending-header">
+                        <div class="stock-info">
+                            <span class="symbol">INFY</span>
+                            <span class="name">Infosys Ltd.</span>
+                        </div>
+                        <span class="change positive">+3.8%</span>
+                    </div>
+                    <div class="trending-details">
+                        <div class="price">₹1,485.09</div>
+                        <div class="volume">Volume: 1.8M</div>
+                    </div>
+                    <div class="trending-chart">
+                        <canvas id="trendingChart2"></canvas>
+                    </div>
+                </div>
+
+                <div class="card trending-card">
+                    <div class="trending-header">
+                        <div class="stock-info">
+                            <span class="symbol">ICICIBANK</span>
+                            <span class="name">ICICI Bank Ltd.</span>
+                        </div>
+                        <span class="change positive">+4.1%</span>
+                    </div>
+                    <div class="trending-details">
+                        <div class="price">₹945.75</div>
+                        <div class="volume">Volume: 3.2M</div>
+                    </div>
+                    <div class="trending-chart">
+                        <canvas id="trendingChart3"></canvas>
+                    </div>
+                </div>
+
+                <div class="card trending-card">
+                    <div class="trending-header">
+                        <div class="stock-info">
+                            <span class="symbol">ADANIENT</span>
+                            <span class="name">Adani Enterprises Ltd.</span>
+                        </div>
+                        <span class="change positive">+2.5%</span>
+                    </div>
+                    <div class="trending-details">
+                        <div class="price">₹3,250.75</div>
+                        <div class="volume">Volume: 2.5M</div>
+                    </div>
+                    <div class="trending-chart">
+                        <canvas id="adaniChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="card trending-card">
+                    <div class="trending-header">
+                        <div class="stock-info">
+                            <span class="symbol">ZOMATO</span>
+                            <span class="name">Zomato Ltd.</span>
+                        </div>
+                        <span class="change positive">+1.8%</span>
+                    </div>
+                    <div class="trending-details">
+                        <div class="price">₹185.25</div>
+                        <div class="volume">Volume: 8.2M</div>
+                    </div>
+                    <div class="trending-chart">
+                        <canvas id="zomatoChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
