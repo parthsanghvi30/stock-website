@@ -249,4 +249,107 @@ function generateChartData(points, trending = false) {
     }
     
     return data;
+}
+
+// Portfolio Management
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize portfolio functionality if we're on the portfolio page
+    if (document.getElementById('addStockForm')) {
+        initPortfolioManagement();
+    }
+});
+
+// Portfolio Management Functions
+function showAddStockForm() {
+    document.getElementById('addStockForm').style.display = 'block';
+}
+
+function hideAddStockForm() {
+    document.getElementById('addStockForm').style.display = 'none';
+}
+
+function initPortfolioManagement() {
+    const stockForm = document.getElementById('stockForm');
+    if (!stockForm) return;
+
+    stockForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const symbol = document.getElementById('stockSymbol').value.toUpperCase();
+        const quantity = parseInt(document.getElementById('stockQuantity').value);
+        const price = parseFloat(document.getElementById('stockPrice').value);
+
+        // Create new row
+        const tbody = document.querySelector('.table-container table tbody');
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td>${symbol}</td>
+            <td>${quantity}</td>
+            <td>₹${formatNumber(price)}</td>
+            <td>₹${formatNumber(quantity * price)}</td>
+            <td class="positive">+0.00%</td>
+        `;
+        tbody.appendChild(newRow);
+
+        // Update total holdings count
+        const totalHoldings = document.querySelector('.card:nth-child(2) .value');
+        const currentCount = parseInt(totalHoldings.textContent);
+        totalHoldings.textContent = `${currentCount + 1} Stocks`;
+
+        // Hide form and reset
+        hideAddStockForm();
+        stockForm.reset();
+
+        // Update portfolio value
+        updatePortfolioValue();
+    });
+}
+
+function updatePortfolioValue() {
+    const rows = document.querySelectorAll('.table-container table tbody tr');
+    let totalValue = 0;
+    let totalChange = 0;
+    let totalChangePercent = 0;
+
+    rows.forEach(row => {
+        const value = parseFloat(row.cells[3].textContent.replace('₹', '').replace(',', ''));
+        const change = parseFloat(row.cells[4].textContent);
+        totalValue += value;
+        totalChange += change;
+    });
+
+    totalChangePercent = (totalChange / rows.length).toFixed(2);
+
+    // Update portfolio value
+    const portfolioValue = document.querySelector('.card:nth-child(1) .value');
+    portfolioValue.textContent = `₹${formatNumber(totalValue)}`;
+
+    // Update change percentage
+    const changeElement = document.querySelector('.card:nth-child(1) .change');
+    changeElement.textContent = `${totalChange >= 0 ? '+' : ''}${totalChangePercent}% Today`;
+    changeElement.className = `change ${totalChange >= 0 ? 'positive' : 'negative'}`;
+}
+
+function formatNumber(num) {
+    return num.toLocaleString('en-IN', {
+        maximumFractionDigits: 2,
+        minimumFractionDigits: 2
+    });
+}
+
+function getStockName(symbol) {
+    // This is a simple mapping - in a real app, you'd get this from an API
+    const stockNames = {
+        'AAPL': 'Apple Inc.',
+        'GOOGL': 'Alphabet Inc.',
+        'MSFT': 'Microsoft Corporation',
+        'AMZN': 'Amazon.com Inc.',
+        'META': 'Meta Platforms Inc.',
+        'TSLA': 'Tesla Inc.',
+        'NVDA': 'NVIDIA Corporation',
+        'JPM': 'JPMorgan Chase & Co.',
+        'V': 'Visa Inc.',
+        'WMT': 'Walmart Inc.'
+    };
+    return stockNames[symbol] || symbol;
 } 

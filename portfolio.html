@@ -41,7 +41,32 @@
             </div>
 
             <div class="holdings-list">
-                <h2>Your Holdings</h2>
+                <div class="holdings-header">
+                    <h2>Your Holdings</h2>
+                    <button class="add-stock-btn" onclick="showAddStockForm()">
+                        <i class="fas fa-plus"></i> Add Stock
+                    </button>
+                </div>
+
+                <!-- Add Stock Form (Hidden by default) -->
+                <div id="addStockForm" class="add-stock-form" style="display: none;">
+                    <form id="stockForm">
+                        <div class="form-group">
+                            <input type="text" id="stockSymbol" placeholder="Stock Symbol (e.g., RELIANCE)" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="stockQuantity" placeholder="Number of Shares" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="stockPrice" placeholder="Purchase Price per Share" required>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="submit-btn">Add Stock</button>
+                            <button type="button" class="cancel-btn" onclick="hideAddStockForm()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
                 <div class="table-container">
                     <table>
                         <thead>
